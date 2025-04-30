@@ -70,7 +70,6 @@ This project implements a conversational AI recipe chatbot using Rasa for the ba
     cd ../frontend 
     npm install 
     ```
-    *(Or `yarn install` if you use yarn)*
 
 ## Running the Application
 
