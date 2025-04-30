@@ -1,0 +1,41 @@
+version: "3.1"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - mood_great
+  - mood_unhappy
+  - request_recipe
+
+entities:
+  - dish_name
+
+slots:
+  dish_name:
+    type: text
+    influence_conversation: false
+    mappings:
+      - type: from_entity
+        entity: dish_name
+
+responses:
+  utter_greet:
+  - text: "Hey! How can I help you find a recipe?"
+
+  utter_goodbye:
+  - text: "Bye"
+
+  utter_happy:
+  - text: "Great, carry on!"
+
+  utter_recipe_not_found:
+  - text: "Sorry, I couldn't find a recipe for that dish in my knowledge base."
+
+actions:
+  - action_query_recipe_kb

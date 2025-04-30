@@ -1,0 +1,50 @@
+version: "3.1"
+
+stories:
+- story: recipe request path
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: request_recipe
+  - action: utter_ask_dish
+  - intent: provide_dish
+    entities:
+    - dish_name
+  - slot_was_set:
+    - dish_name
+  - action: utter_ask_cuisine
+  - intent: specify_cuisine
+    entities:
+    - cuisine_type
+  - slot_was_set:
+    - cuisine_type
+  - action: utter_ask_ingredients
+  - intent: provide_ingredients
+    entities:
+    - ingredient
+  - slot_was_set:
+    - ingredients
+  - action: utter_ask_dietary_restrictions
+  - intent: dietary_restrictions
+    entities:
+    - dietary_restriction
+  - slot_was_set:
+    - dietary_restrictions
+  - action: utter_ask_cooking_preferences
+  - intent: cooking_preferences
+  - slot_was_set:
+    - cooking_preferences
+  - action: action_generate_recipe
+  - action: utter_provide_recipe
+  - intent: thank_you
+  - action: utter_thank_you
+
+- story: goodbye path
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: fallback path
+  steps:
+  - intent: out_of_scope
+  - action: utter_default 

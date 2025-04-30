@@ -1,0 +1,69 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - request_recipe
+  - provide_dish
+  - specify_cuisine
+  - provide_ingredients
+  - dietary_restrictions
+  - cooking_preferences
+  - thank_you
+  - deny
+  - affirm
+
+entities:
+  - dish_name
+  - cuisine_type
+  - ingredient
+  - dietary_restriction
+  - cooking_method
+  - cooking_time
+  - difficulty_level
+
+slots:
+  dish_name:
+    type: text
+    influence_conversation: true
+  cuisine_type:
+    type: text
+    influence_conversation: true
+  ingredients:
+    type: list
+    influence_conversation: true
+  dietary_restrictions:
+    type: list
+    influence_conversation: true
+  cooking_preferences:
+    type: text
+    influence_conversation: true
+  recipe_details:
+    type: any
+    influence_conversation: true
+
+responses:
+  utter_greet:
+    - text: "Hello! I'm your recipe assistant. How can I help you today?"
+  utter_goodbye:
+    - text: "Goodbye! Happy cooking!"
+  utter_ask_dish:
+    - text: "What dish would you like to make?"
+  utter_ask_cuisine:
+    - text: "What cuisine style would you prefer?"
+  utter_ask_ingredients:
+    - text: "Do you have any specific ingredients you'd like to use?"
+  utter_ask_dietary_restrictions:
+    - text: "Any dietary restrictions I should know about?"
+  utter_ask_cooking_preferences:
+    - text: "Any specific cooking preferences? (e.g., quick, traditional, healthy)"
+  utter_provide_recipe:
+    - text: "Here's a recipe for {dish_name}:\n\n{recipe_details}"
+  utter_thank_you:
+    - text: "You're welcome! Let me know if you need anything else."
+  utter_default:
+    - text: "I'm not sure I understand. Could you rephrase that?"
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true 

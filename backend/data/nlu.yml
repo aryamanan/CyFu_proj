@@ -1,0 +1,92 @@
+version: "3.1"
+
+nlu:
+- intent: request_recipe
+  examples: |
+    - Can you find a recipe for [lasagna](dish_name)?
+    - I want to make [chicken soup](dish_name)
+    - How do I cook [pasta carbonara](dish_name)?
+    - Give me a recipe for [apple pie](dish_name)
+    - Search for [chocolate cake](dish_name) recipe
+    - Find [beef stew](dish_name) instructions
+    - What's the recipe for [guacamole](dish_name)?
+    - Show me how to prepare [scrambled eggs](dish_name)
+    - I need a [No-Bake Nut Cookies](dish_name) recipe
+    - find recipe for [Jewell Ball'S Chicken](dish_name)
+    - tell me how to make [Better Than Sex Cake](dish_name)
+    - what about [Homemade Bacon](dish_name)?
+    - recipe for [Pizza Casserole](dish_name)
+    - how to make [french toast](dish_name)
+    - do you have a recipe for [split pea soup](dish_name)
+    - looking for [vegetarian chili](dish_name) instructions
+    - show me the recipe for [classic bolognese](dish_name)
+    - find [pumpkin bread](dish_name)
+    - get me the [shepherd's pie](dish_name) recipe
+    - [chicken marsala](dish_name)
+    - [beef wellington](dish_name) recipe please
+    - instructions for [tiramisu](dish_name)
+
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - good morning
+    - good evening
+    - hey there
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you around
+    - see you later
+
+- intent: affirm
+  examples: |
+    - yes
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+
+- intent: deny
+  examples: |
+    - no
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+
+# Keep mood intents for now, might be useful later
+- intent: mood_great
+  examples: |
+    - perfect
+    - very good
+    - great
+    - amazing
+    - wonderful
+    - I am feeling very good
+    - I am great
+    - I'm good
+
+- intent: mood_unhappy
+  examples: |
+    - sad
+    - very sad
+    - unhappy
+    - bad
+    - very bad
+    - awful
+    - terrible
+    - not very good
+    - extremely sad
+    - so sad
+
+- intent: bot_challenge
+  examples: |
+    - are you a bot?
+    - are you a human?
+    - am I talking to a bot?
+    - am I talking to a human?

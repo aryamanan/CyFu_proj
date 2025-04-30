@@ -1,0 +1,31 @@
+version: "3.1"
+
+stories:
+
+- story: happy path - request recipe
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: request_recipe
+    entities:
+    - dish_name: "lasagna"
+  - slot_was_set:
+    - dish_name: "lasagna" 
+  - action: action_query_recipe_kb
+  - intent: goodbye
+  - action: utter_goodbye
+
+- story: sad path - ask for recipe, then deny
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: request_recipe
+    entities:
+    - dish_name: "unknown dish"
+  - slot_was_set:
+    - dish_name: "unknown dish"
+  - action: action_query_recipe_kb # This will likely respond with utter_recipe_not_found
+  - intent: deny # User might respond negatively if recipe not found
+  - action: utter_goodbye # End conversation
+
+# Removed default stories related to moods, bot challenge etc.
