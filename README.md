@@ -2,6 +2,9 @@
 
 This project implements a conversational AI recipe chatbot using Rasa for the backend NLU and dialogue management, and React for the frontend user interface.
 
+https://youtu.be/Ffp8i9IGoNo
+[![IMAGE ALT TEXT](https://youtu.be/Ffp8i9IGoNo)](https://youtu.be/Ffp8i9IGoNo)
+
 ## Project Structure
 
 - `backend/`: Contains the Rasa project, custom actions, and knowledge base logic.
